@@ -1,0 +1,44 @@
+[
+    {
+        "sid": 1,
+        "name": "Cardiology",
+        "image": "https://i.ibb.co/NNxpWX7/Cardiology.jpg",
+        "shortDesc": "Cardiology is the study and treatment of disorders of the heart and the blood vessels.",
+        "longDesc": "Cardiology is the study and treatment of disorders of the heart and the blood vessels. A person with heart disease or cardiovascular disease may be referred to a cardiologist.Cardiology is a branch of internal medicine. A cardiologist is not the same as a cardiac surgeon. A cardiac surgeon opens the chest and performs heart surgery.A cardiologist specializes in diagnosing and treating diseases of the cardiovascular system. The cardiologist will carry out tests, and they may perform some procedures, such as heart catheterizations, angioplasty, or inserting a pacemaker. Heart disease relates specifically to the heart, while cardiovascular disease affects the heart, the blood vessels, or both."
+    },
+    {
+        "sid": 2,
+        "name": "Dental",
+        "image": "https://i.ibb.co/BcvdFr0/Dental.jpg",
+        "shortDesc": "Dentists diagnose and treat problems with patients' teeth, gums, and related parts of the mouth",
+        "longDesc": "Dental, also known as dental medicine and oral medicine, is a branch of medicine that consists of the study, diagnosis, prevention, and treatment of diseases, disorders, and conditions of the oral cavity (the mouth), commonly in the dentition (development and arrangement of teeth) as well as the oral mucosa, and of adjacent and related structures and tissues, particularly in associated maxillofacial (jaw and facial) area.[1] The field of dentistry or dental medicine includes teeth as well as other aspects of the craniofacial complex including the temporomandibular joint and other supporting, muscular, lymphatic, nervous, vascular, and anatomical structures. The practitioner is called a dentist."
+    },
+    {
+        "sid": 3,
+        "name": "Neurology",
+        "image": "https://i.ibb.co/f87NRB2/Neurologist.jpg",
+        "shortDesc": "Neurology is a branch of medicine dealing with disorders of the nervous system.",
+        "longDesc": "Neurology is a branch of medicine dealing with disorders of the nervous system. Neurology deals with the diagnosis and treatment of all categories of conditions and disease involving the central and peripheral nervous systems (and their subdivisions, the autonomic and somatic nervous systems), including their coverings, blood vessels, and all effector tissue, such as muscle.[1] Neurological practice relies heavily on the field of neuroscience, the scientific study of the nervous system. A neurologist is a physician specializing in neurology and trained to investigate, or diagnose and treat neurological disorders.[2] Neurologists treat a myriad of neurologic conditions, including stroke, seizures, movement disorders such as Parkinson's disease, autoimmune neurologic disorders such as multiple sclerosis, headache disorders like migraine and dementias such as Alzheimer's disease.[3] Neurologists may also be involved in clinical research, clinical trials, and basic or translational research. While neurology is a nonsurgical specialty, its corresponding surgical specialty is neurosurgery.[2]"
+    },
+    {
+        "sid": 4,
+        "name": "Pediatric",
+        "image": "https://i.ibb.co/0sLcF83/Pediatric.jpg",
+        "shortDesc": "Pediatrics is the branch of medicine dealing with the health and medical care of infants, children, and adolescents from birth up to the age of 18",
+        "longDesc": "Pediatrics is the branch of medicine dealing with the health and medical care of infants, children, and adolescents from birth up to the age of 18. The word “paediatrics” means “healer of children”; they are derived from two Greek words: (pais = child) and (iatros = doctor or healer). Paediatrics is a relatively new medical specialty, developing only in the mid-19th century. Abraham Jacobi (1830–1919) is known as the father of paediatrics. What does a pediatrician do? A paediatrician is a child's physician who provides not only medical care for children who are acutely or chronically ill but also preventive health services for healthy children. A paediatrician manages physical, mental, and emotional well-being of the children under their care at every stage of development, in both sickness and health"
+    },
+    {
+        "sid": 5,
+        "name": "Pulmonary",
+        "image": "https://i.ibb.co/R7gCrwF/Pulmonary.jpg",
+        "shortDesc": "Pulmonary hypertension is high blood pressure in the blood vessels that supply the lungs",
+        "longDesc": "Pulmonary hypertension is high blood pressure in the blood vessels that supply the lungs (pulmonary arteries). It's a serious condition that can damage the right side of the heart. The walls of the pulmonary arteries become thick and stiff, and cannot expand as well to allow blood through. The reduced blood flow makes it harder for the right side of the heart to pump blood through the arteries. If the right side of your heart has to continually work harder, it can gradually become weaker. This can lead to heart failure. Pulmonary hypertension is a rare condition that can affect people of all ages, but it's more common in people who have another heart or lung condition."
+    },
+    {
+        "sid": 6,
+        "name": "Traumatology",
+        "image": "https://i.ibb.co/mDFFD48/Traumatology.jpg",
+        "shortDesc": "Traumatology: The branch of surgery that deals with injured patients, usually on an emergency basis.",
+        "longDesc": "In medicine, traumatology is the study of wounds and injuries caused by accidents or violence to a person, and the surgical therapy and repair of the damage. Traumatology is a branch of medicine. It is often considered a subset of surgery and in countries without the specialty of trauma surgery it is most often a sub-specialty to orthopedic surgery. Traumatology may also be known as accident surgery. When it comes to types of trauma, medical and psychological traumatology go hand in hand. Types of trauma include car accidents, gunshot wounds, concussions, PTSD from incidents, etc. Medical traumas are repaired with surgeries; however, they can still cause psychological trauma and other stress factors. For example, a teenager in a car accident who broke his wrist and needed extensive surgery to save their arm may experience anxiety when driving in a car post-accident. PTSD can be diagnosed after a person experiences one or more intense and traumatic events and react with fear with complaints from three categorical symptoms lasting one month or longer. These categories are: re-experiencing the traumatic event, avoiding anything associated with the trauma, and increased symptoms of increased psychological arousal. "
+    }
+]

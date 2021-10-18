@@ -1,0 +1,5 @@
+.banner {
+    background: url("https://i.ibb.co/cCn0sTg/banner.jpg"), rgb(21, 33, 61);
+    background-size: cover;
+    background-blend-mode: overlay;
+}
