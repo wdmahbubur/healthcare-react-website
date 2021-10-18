@@ -8,9 +8,9 @@ import InputField from '../InputField/InputField';
 
 const Footer = () => {
     return (
-        <div className="p-16 pb-2 bg-gray-100 text-gray-500">
-            <div className="grid grid-cols-1 md:grid-cols-4 pb-8">
-                <div className="flex flex-col justify-between">
+        <div className="p-8 lg:p-16 bg-gray-100 text-gray-500">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 pb-8">
+                <div className="flex flex-col gap-y-2 justify-between">
                     <div className="flex">
                         <img className="block h-8 w-auto" src={logo} alt="" />
                         <h3 className="text-blue-900 font-semibold text-2xl">REACT LIFE</h3>
