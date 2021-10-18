@@ -2,8 +2,11 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import logo from '../../logo.svg';
+import Button from '../Button/Button';
 const Header = () => {
+    const { user, signOutUser } = useAuth();
     const dropdownRef = useRef();
     const mobileMenu = useRef();
     const [profileToggle, setProfileToggle] = useState(false);
@@ -60,13 +63,13 @@ const Header = () => {
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
 
-                                <NavLink to="/" activeClassName="bg-blue-900 text-white" className="px-3 py-2 rounded-md text-sm font-medium" >Home</NavLink>
+                                <NavLink to="/" activeClassName="bg-blue-900 text-white" className="px-3 py-3 rounded-md text-sm font-medium" >Home</NavLink>
 
-                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Service</NavLink>
+                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Service</NavLink>
 
-                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</NavLink>
+                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">About Us</NavLink>
 
-                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</NavLink>
+                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Contact</NavLink>
 
                             </div>
                         </div>
@@ -75,26 +78,28 @@ const Header = () => {
 
                         {/* Profile dropdown */}
                         <div className="ml-3 relative">
-
-                            {/* <div>
-                                <button type="button" className="flex gap-2 items-center text-md rounded-full focus:outline-none  focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onClick={profileToggleMenu}>
-                                    <span className="sr-only">Open user menu</span>
-                                    <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                    <h4 className="hidden lg:block">Mahbubur Rahman</h4>
-                                    <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
-                                </button>
-                            </div> */}
-
-                            <NavLink to="/login" className="bg-blue-900 text-white px-3 py-2 rounded-md text-sm font-medium" >Login</NavLink>
-
-
+                            {
+                                user.email ? <div className="flex">
+                                    <button type="button" className="flex gap-2 items-center text-md rounded-full focus:outline-none  focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onClick={profileToggleMenu}>
+                                        <span className="sr-only">Open user menu</span>
+                                        {
+                                            user.photoURL && <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+                                        }
+                                        <h4 className="hidden lg:block">{user.displayName}</h4>
+                                        <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
+                                    </button>
+                                    <Button type="button" customStyle="bg-blue-900 text-white ml-2" onClick={signOutUser}>Logout</Button>
+                                </div>
+                                    :
+                                    <NavLink to="/login" className="bg-blue-900 text-white px-3 py-3 rounded-md text-sm font-medium" >Login</NavLink>
+                            }
                             {/* Dropdown menu, show/hide based on menu state. */}
 
                             <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1" ref={dropdownRef} onMouseOut={profileToggleMenu}>
 
                                 <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</NavLink>
                                 <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</NavLink>
-                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</NavLink>
+
                             </div>
                         </div>
                     </div>

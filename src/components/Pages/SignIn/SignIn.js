@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
 import logo from '../../../logo.svg';
 
-import LoginForm from '../../SignInForm/SignInForm';
+import SignInForm from '../../SignInForm/SignInForm';
 import SignupForm from '../../SignupForm/SignupForm';
 const Login = () => {
+    const { user, googleSignIn } = useAuth();
     const [formToggle, setFormToggle] = useState(true);
 
     const signInToggle = () => {
@@ -13,11 +15,12 @@ const Login = () => {
     const signUpToggle = () => {
         setFormToggle(false);
     }
+    console.log(user)
 
 
     return (
-        <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-md w-full space-y-6">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-md w-full space-y-6">
                 <div className="text-center">
                     <div className="flex-shrink-0 flex items-center justify-center">
                         <img className="block h-8 w-auto" src={logo} alt="" />
@@ -31,7 +34,7 @@ const Login = () => {
                         <div className={`w-full text-center py-3 cursor-pointer rounded-tr-md ${!formToggle ? "bg-blue-400 text-white" : "hover:bg-gray-100 border-b-2"}`} onClick={signUpToggle}>Sign Up</div>
                     </div>
                     {
-                        formToggle ? <LoginForm></LoginForm> : <SignupForm></SignupForm>
+                        formToggle ? <SignInForm></SignInForm> : <SignupForm></SignupForm>
                     }
 
                 </div>
