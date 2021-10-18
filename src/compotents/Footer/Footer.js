@@ -1,7 +1,7 @@
 import { faFacebookF, faInstagram, faLinkedin, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../logo.svg';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
@@ -60,7 +60,7 @@ const Footer = () => {
                     <h3 className="text-blue-900 font-semibold text-2xl mb-4">Subscribe</h3>
                     <form className="flex flex-col gap-4">
                         <InputField type="email" placeholder="Enter Your Email" required></InputField>
-                        <Button type="submit" bgColor="bg-blue-900">Subscribe</Button>
+                        <Button type="submit" customStyle="bg-blue-900">Subscribe</Button>
                         <p> Get The Latest Updates via email. Any time you may unsubscribe</p>
                     </form>
                 </div>

@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Router>
-        <header>
+        <header className="sticky top-0">
           <Header></Header>
         </header>
         <Switch>
