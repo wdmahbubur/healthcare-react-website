@@ -5,7 +5,9 @@ import Home from './components/Pages/Home/Home';
 import Footer from './components/Footer/Footer';
 import SignIn from './components/Pages/SignIn/SignIn';
 import AuthProvider from './context/authProvider';
+import ServiceDetails from './components/Pages/ServiceDetails/ServiceDetails';
 
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
             <Route path="/login">
               <SignIn></SignIn>
             </Route>
+            <PrivateRoute path="/service/:sid">
+              <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
           </Switch>
           <footer>
             <Footer></Footer>

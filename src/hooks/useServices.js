@@ -8,6 +8,7 @@ const useServices = () => {
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
+
     return {
         services,
     }

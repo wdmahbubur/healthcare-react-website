@@ -1,13 +1,18 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../logo.svg';
 
 import SignInForm from '../../SignInForm/SignInForm';
 import SignupForm from '../../SignupForm/SignupForm';
+import { useLocation, useHistory } from 'react-router-dom';
+
 const Login = () => {
-    const { user, googleSignIn } = useAuth();
+    const { user } = useAuth();
     const [formToggle, setFormToggle] = useState(true);
+    let history = useHistory();
+    const location = useLocation();
+    const url = location.state?.from || "/";
 
     const signInToggle = () => {
         setFormToggle(true);
@@ -15,7 +20,9 @@ const Login = () => {
     const signUpToggle = () => {
         setFormToggle(false);
     }
-    console.log(user)
+    useEffect(() => {
+        user.email && history.push(url)
+    }, [user])
 
 
     return (

@@ -1,9 +1,14 @@
 import React from 'react';
 import useServices from '../../hooks/useServices';
 import Card from '../Card/Card';
-
+import { useHistory } from 'react-router-dom';
 const Services = () => {
     const { services } = useServices();
+    let history = useHistory();
+    const readMore = (sid) => {
+        history.push(`/service/${sid}`);
+    }
+
     return (
         <div className="py-8 px-4 lg:px-28" id="services">
             <div className="text-center mb-8">
@@ -13,7 +18,7 @@ const Services = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4  lg:gap-x-10">
                 {
-                    services.map(service => <Card key={service.sid} service={service}></Card>)
+                    services.map(service => <Card key={service.sid} service={service} readMore={readMore}></Card>)
                 }
             </div>
 
