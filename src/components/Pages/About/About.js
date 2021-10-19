@@ -21,31 +21,31 @@ const About = () => {
                     </div>
                 </div>
                 <hr className="my-8" />
-                <div className="grid grid-cols-3 gap-8">
-                    <div className="shadow-lg p-8">
-                        <div className="text-center">
+                <div className="grid lg:grid-cols-3 gap-8">
+                    <div className="shadow-lg p-8 text-center">
+                        <div >
                             <FontAwesomeIcon icon={faPaperPlane} className="text-4xl text-blue-600"></FontAwesomeIcon>
                         </div>
                         <div className="text-gray-600 rounded-sm">
-                            <h4 className="text-2xl font-medium text-center my-5">Our Vision</h4>
+                            <h4 className="text-2xl font-medium my-5">Our Vision</h4>
                             <p>To evolve as a benchmark in quality healthcare available to one and all.</p>
                         </div>
                     </div>
-                    <div className="shadow-lg p-8">
-                        <div className="text-center">
+                    <div className="shadow-lg p-8 text-center">
+                        <div>
                             <FontAwesomeIcon icon={faFlag} className="text-4xl text-blue-600"></FontAwesomeIcon>
                         </div>
                         <div className="text-gray-600 rounded-sm">
-                            <h4 className="text-2xl font-medium text-center my-5">Our Mission</h4>
+                            <h4 className="text-2xl font-medium my-5">Our Mission</h4>
                             <p>To ensure accessible and affordable quality healthcare by compassionate medical professionals to all.</p>
                         </div>
                     </div>
-                    <div className="shadow-lg p-8">
-                        <div className="text-center">
+                    <div className="shadow-lg p-8 text-center">
+                        <div >
                             <FontAwesomeIcon icon={faPaperclip} className="text-4xl text-blue-600"></FontAwesomeIcon>
                         </div>
                         <div className="text-gray-600 rounded-sm">
-                            <h4 className="text-2xl font-medium text-center my-5">Our Policy</h4>
+                            <h4 className="text-2xl font-medium my-5">Our Policy</h4>
                             <p>To provide value added innovative, consistent, and continuously improving health and medical care to sustain and further improve clinical outcomes, patient safety, & patient satisfaction.</p>
                         </div>
                     </div>

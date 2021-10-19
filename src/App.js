@@ -9,6 +9,7 @@ import ServiceDetails from './components/Pages/ServiceDetails/ServiceDetails';
 
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import About from './components/Pages/About/About';
+import Contact from './components/Pages/Contact/Contact';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <Route path="/about">
               <About></About>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
           </Switch>
           <footer>

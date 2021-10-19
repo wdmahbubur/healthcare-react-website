@@ -67,9 +67,9 @@ const Header = () => {
 
                                 <NavLink to="#services" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Service</NavLink>
 
-                                <NavLink to="/about" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">About Us</NavLink>
+                                <NavLink to="/about" activeClassName="bg-blue-900 text-white" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">About Us</NavLink>
 
-                                <NavLink to="#" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Contact</NavLink>
+                                <NavLink to="/contact" activeClassName="bg-blue-900 text-white" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Contact</NavLink>
 
                             </div>
                         </div>

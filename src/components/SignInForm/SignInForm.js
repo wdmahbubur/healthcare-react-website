@@ -54,7 +54,7 @@ const SignInForm = () => {
                 </div>
 
                 <div>
-                    <Button type="submit" customStyle="group relative w-full flex justify-center bg-blue-900">
+                    <Button type="submit" customStyle="w-full bg-blue-900">
                         Sign in
                     </Button>
                 </div>
