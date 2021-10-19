@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
 const SignInForm = () => {
-    const { googleSignIn, signIn } = useAuth();
+    const { googleSignIn, signIn, error } = useAuth();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
@@ -56,6 +56,7 @@ const SignInForm = () => {
                     <Button type="submit" customStyle="w-full bg-blue-900">
                         Sign in
                     </Button>
+                    <p className="my-3 text-red-500 text-center">{error}</p>
                 </div>
             </form>
             <hr />

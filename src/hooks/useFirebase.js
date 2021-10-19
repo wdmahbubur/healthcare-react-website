@@ -15,6 +15,7 @@ const useFirebase = () => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                setError("")
             }
         });
     }, [auth])
@@ -24,6 +25,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 setUser(result.user);
+                setError("")
             })
             .catch(error => {
                 setError(error.message)
@@ -38,24 +40,38 @@ const useFirebase = () => {
                 })
                     .then(result => {
                         setUser(result.user)
+                        setError("")
                     })
                     .catch(err => {
                         setError(err.message);
                     })
+            })
+            .catch(err => {
+                setError("Failed To Create Account");
             })
     }
     const signIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user);
+                setError("")
             })
             .catch(err => {
-                setError(err.message);
+                if (err.message === "Firebase: Error (auth/user-not-found).") {
+                    setError("User Not Found")
+                }
+                else if (err.message === "Firebase: Error (auth/wrong-password).") {
+                    setError("Wrong Password")
+                }
+                else {
+                    setError(err.message)
+                }
             })
     }
     const signOutUser = () => {
         signOut(auth).then(() => {
             setUser({});
+            setError("")
         }).catch((error) => {
             setError(error.message);
         });

@@ -6,21 +6,36 @@ import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
 const SignupForm = () => {
-    const { createAccount } = useAuth();
+    const { createAccount, error } = useAuth();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
     const handleName = (e) => {
         return setName(e.target.value);
     }
     const handleEmail = (e) => {
-        return setEmail(e.target.value);
+        if (/^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/.test(e.target.value)) {
+            setEmailError("");
+            return setEmail(e.target.value);
+        }
+        else {
+            return setEmailError("Invalid Email Address");
+        }
     }
 
     const handlePassword = (e) => {
-        return setPassword(e.target.value);
+        if (/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$@^%&? "])[a-zA-Z0-9!#$@^%&?]{8,20}$/.test(e.target.value)) {
+            setPasswordError("");
+            return setPassword(e.target.value);
+        }
+        else {
+            setPasswordError("Please enter 8-20 characters password. Include one uppercase, one lowercase, one digit and one special character");
+        }
     }
     const handleForm = (e) => {
         e.preventDefault();
@@ -39,9 +54,11 @@ const SignupForm = () => {
                     </div>
                     <div>
                         <InputField type="email" placeholder="Enter Your Email" required onBlur={handleEmail}></InputField>
+                        <p className="my-3 text-red-500 text-center">{emailError}</p>
                     </div>
                     <div>
                         <InputField type="password" placeholder="Enter Your Password" required onBlur={handlePassword}></InputField>
+                        <p className="my-3 text-red-500 text-center">{passwordError}</p>
                     </div>
                 </div>
 
@@ -49,6 +66,8 @@ const SignupForm = () => {
                     <Button type="submit" customStyle="w-full bg-blue-900">
                         Sign Up
                     </Button>
+
+                    <p className="my-3 text-red-500 text-center">{error}</p>
                 </div>
             </form>
             <hr />
