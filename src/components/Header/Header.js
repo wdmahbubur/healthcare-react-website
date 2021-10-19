@@ -13,6 +13,8 @@ const Header = () => {
     const [profileToggle, setProfileToggle] = useState(false);
     const [mobileMenuToggle, setMobileMenuToggle] = useState(false);
 
+    // hide or show mobile or sub menu
+
     const profileToggleMenu = () => {
         if (!profileToggle) {
             dropdownRef.current.classList.remove("hidden");

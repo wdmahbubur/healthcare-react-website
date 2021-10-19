@@ -2,8 +2,10 @@ import firebaseAuthentication from "../firebase/firebase.initialize";
 import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 
+// firebase initialize
 firebaseAuthentication();
 const useFirebase = () => {
+    // state for store info
     const [user, setUser] = useState({});
     const [error, setError] = useState();
 
@@ -11,6 +13,7 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    // get state change user
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -21,6 +24,7 @@ const useFirebase = () => {
     }, [auth])
 
 
+    // google sign in
     const googleSignIn = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -32,6 +36,7 @@ const useFirebase = () => {
             })
     }
 
+    // create account using name, email, password
     const createAccount = (name, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -50,6 +55,8 @@ const useFirebase = () => {
                 setError("Failed To Create Account");
             })
     }
+
+    // sign in using email and password
     const signIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -68,6 +75,8 @@ const useFirebase = () => {
                 }
             })
     }
+
+    // sign out user
     const signOutUser = () => {
         signOut(auth).then(() => {
             setUser({});

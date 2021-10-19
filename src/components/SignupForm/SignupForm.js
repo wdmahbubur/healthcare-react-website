@@ -19,6 +19,7 @@ const SignupForm = () => {
         return setName(e.target.value);
     }
     const handleEmail = (e) => {
+        // check email is correct
         if (/^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/.test(e.target.value)) {
             setEmailError("");
             return setEmail(e.target.value);
@@ -29,6 +30,7 @@ const SignupForm = () => {
     }
 
     const handlePassword = (e) => {
+        // check password is valid
         if (/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$@^%&? "])[a-zA-Z0-9!#$@^%&?]{8,20}$/.test(e.target.value)) {
             setPasswordError("");
             return setPassword(e.target.value);

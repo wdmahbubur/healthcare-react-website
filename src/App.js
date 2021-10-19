@@ -15,7 +15,9 @@ import NotFound from './components/Pages/NotFound/NotFound';
 function App() {
   return (
     <div>
+      {/* Context Api */}
       <AuthProvider>
+        {/* Route */}
         <Router>
           <header className="sticky top-0 z-50">
             <Header></Header>

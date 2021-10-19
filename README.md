@@ -2,7 +2,7 @@
 
 Website Live Preview: https://health-care-website-4342c.web.app/
 
-This is a Hospital Website. Use some technology to complete website. Use ReactJS, Tailwind, Firebase, react-router-dom etc. User See the hospital service and hospital doctors. User login to get more information.
+This is a Hospital Website. Use some technology to complete website. Use ReactJS, Tailwind, Firebase, react-router-dom etc. User See the hospital service and hospital doctors. User login to get more information. Full website complete with tailwind CSS Framework.
 
 ## Features
 - Full Website is responsive on mobile and tablet

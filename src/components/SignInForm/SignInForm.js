@@ -10,13 +10,17 @@ const SignInForm = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
+    // get data from input
     const handleEmail = (e) => {
         return setEmail(e.target.value);
     }
 
+    // get data from input
     const handlePassword = (e) => {
         return setPassword(e.target.value);
     }
+
+    // handle submit form
     const handleForm = (e) => {
         e.preventDefault();
         signIn(email, password);
