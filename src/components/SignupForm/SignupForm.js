@@ -30,11 +30,11 @@ const SignupForm = () => {
 
     return (
         <div className="space-y-6 px-6 pb-6 ">
-            <h2 class="mt-6 text-center text-2xl font-semibold text-gray-900">
+            <h2 className="mt-6 text-center text-2xl font-semibold text-gray-900">
                 Create new account
             </h2>
-            <form class="mt-8 space-y-4" onSubmit={handleForm}>
-                <div class="rounded-md shadow-sm space-y-4">
+            <form className="mt-8 space-y-4" onSubmit={handleForm}>
+                <div className="rounded-md shadow-sm space-y-4">
                     <div>
                         <InputField type="text" placeholder="Enter Your Name" required onBlur={handleName}></InputField>
                     </div>

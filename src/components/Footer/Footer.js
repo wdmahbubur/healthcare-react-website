@@ -2,22 +2,21 @@ import { faFacebookF, faInstagram, faLinkedin, faTelegram, faTwitter } from '@fo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../logo.svg';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
+import Logo from '../Logo/Logo';
 
 const Footer = () => {
     return (
-        <div className="p-8 lg:p-16 bg-gray-100 text-gray-500">
+        <div className="p-8 lg:px-16 lg:pt-16 lg:pb-2 bg-gray-100 text-gray-500">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 pb-8">
                 <div className="flex flex-col gap-y-2 justify-between">
-                    <div className="flex">
-                        <img className="block h-8 w-auto" src={logo} alt="" />
-                        <h3 className="text-blue-900 font-semibold text-2xl">REACT LIFE</h3>
+                    <Logo></Logo>
+                    <div>
+                        <p>Address: Dhaka, Bangladesh</p>
+                        <p>Phone: +880 12345-6789</p>
+                        <p>Email: info@example.com</p>
                     </div>
-                    <h4>
-                        It is a long established fact that a reader will be distracted by the readable.
-                    </h4>
                     <div className="flex gap-3">
                         <a href="/#" className="border-2 border-blue-400 text-blue-400 w-10 h-10 flex rounded-full justify-center items-center text-base hover:bg-blue-900 hover:text-white transition-colors">
                             <FontAwesomeIcon icon={faFacebookF} className=""></FontAwesomeIcon>

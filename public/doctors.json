@@ -1,0 +1,20 @@
+[
+    {
+        "did": 1,
+        "name": "Carl Hamilton",
+        "image": "https://randomuser.me/api/portraits/men/44.jpg",
+        "specialized": "Cardiology Specialized"
+    },
+    {
+        "did": 2,
+        "name": "Vivan Herrera",
+        "image": "https://randomuser.me/api/portraits/women/58.jpg",
+        "specialized": "Dental Specialized"
+    },
+    {
+        "did": 3,
+        "name": "Fred Armstrong",
+        "image": "https://randomuser.me/api/portraits/men/51.jpg",
+        "specialized": "Neurology Specialized"
+    }
+]

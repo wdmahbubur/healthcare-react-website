@@ -26,13 +26,13 @@ const ServiceDetails = () => {
     console.log(data);
 
     return (
-        <div className="px-16 py-8 space-y-6">
+        <div className="px-4 md:px-4 lg:px-16 py-8 space-y-6">
             {loading && <div>Loading...</div>}
             {
                 !loading && <>
                     <h2 className="text-3xl">{data.name}</h2>
                     <hr />
-                    <img src={data.image} alt="" className="text-center w-2/3 h-96 mx-auto " />
+                    <img src={data.image} alt="" className="text-center w-auto md:w-2/3 h-96 mx-auto " />
                     <p>
                         {data.longDesc}
                     </p>

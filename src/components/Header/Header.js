@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../logo.svg';
 import Button from '../Button/Button';
+import Logo from '../Logo/Logo';
 const Header = () => {
     const { user, signOutUser } = useAuth();
     const dropdownRef = useRef();
@@ -56,10 +57,9 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex-shrink-0 flex items-center">
-                            <img className="block h-8 w-auto" src={logo} alt="" />
-                            <h3 className="text-blue-400 font-semibold text-2xl">REACT LIFE</h3>
-                        </div>
+
+                        <Logo></Logo>
+
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
 
@@ -83,12 +83,15 @@ const Header = () => {
                                     <button type="button" className="flex gap-2 items-center text-md rounded-full focus:outline-none  focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onClick={profileToggleMenu}>
                                         <span className="sr-only">Open user menu</span>
                                         {
-                                            user.photoURL && <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+                                            user.photoURL ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+                                                :
+                                                <img className="h-8 w-8 rounded-full" src="https://i.ibb.co/m9zPyPC/avater.png" alt="" />
+
                                         }
                                         <h4 className="hidden lg:block">{user.displayName}</h4>
                                         <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
                                     </button>
-                                    <Button type="button" customStyle="bg-blue-900 text-white ml-2" onClick={signOutUser}>Logout</Button>
+                                    <Button type="button" customStyle="bg-blue-900 text-white ml-2 hidden lg:block" onClick={signOutUser}>Logout</Button>
                                 </div>
                                     :
                                     <NavLink to="/login" className="bg-blue-900 text-white px-3 py-3 rounded-md text-sm font-medium" >Login</NavLink>
@@ -97,8 +100,10 @@ const Header = () => {
 
                             <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1" ref={dropdownRef} onMouseOut={profileToggleMenu}>
 
-                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</NavLink>
-                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</NavLink>
+                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-0" onClick={profileToggleMenu}>Your Profile</NavLink>
+                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-1" onClick={profileToggleMenu}>Settings</NavLink>
+
+                                <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white lg:hidden" role="menuitem" tabIndex="-1" id="user-menu-item-1" onClick={signOutUser} onMouseUp={profileToggleMenu}>Logout</NavLink>
 
                             </div>
                         </div>

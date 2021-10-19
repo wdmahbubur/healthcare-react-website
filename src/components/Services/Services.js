@@ -16,9 +16,9 @@ const Services = () => {
                 <hr className="w-16 h-1 bg-blue-900 mx-auto" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4  lg:gap-x-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-8 lg:gap-x-10">
                 {
-                    services.map(service => <Card key={service.sid} service={service} readMore={readMore}></Card>)
+                    services.map(service => <Card key={service.sid} id={service.sid} name={service.name} image={service.image} bodyText={service.shortDesc} request="services" clickHandler={readMore}></Card>)
                 }
             </div>
 

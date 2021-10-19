@@ -1,25 +1,40 @@
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useState } from 'react/cjs/react.development';
 import useAuth from '../../hooks/useAuth';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
 const SignInForm = () => {
-    const { googleSignIn } = useAuth();
+    const { googleSignIn, signIn } = useAuth();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    const handleEmail = (e) => {
+        return setEmail(e.target.value);
+    }
+
+    const handlePassword = (e) => {
+        return setPassword(e.target.value);
+    }
+    const handleForm = (e) => {
+        e.preventDefault();
+        signIn(email, password);
+    }
     return (
         <div className="space-y-6 px-6 pb-6 ">
             <h2 className="mt-6 text-center text-2xl font-semibold text-gray-900">
                 Sign in to your account
             </h2>
-            <form className="mt-8 space-y-4">
+            <form className="mt-8 space-y-4" onSubmit={handleForm}>
                 <input type="hidden" name="remember" value="true" />
                 <div className="rounded-md shadow-sm space-y-4">
                     <div>
-                        <InputField type="email" placeholder="Enter Your Email" required></InputField>
+                        <InputField type="email" placeholder="Enter Your Email" required onBlur={handleEmail}></InputField>
                     </div>
                     <div>
-                        <InputField type="password" placeholder="Enter Your Password" required></InputField>
+                        <InputField type="password" placeholder="Enter Your Password" required onBlur={handlePassword}></InputField>
                     </div>
                 </div>
 

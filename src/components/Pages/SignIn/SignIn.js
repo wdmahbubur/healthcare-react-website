@@ -1,11 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
-import logo from '../../../logo.svg';
 
 import SignInForm from '../../SignInForm/SignInForm';
 import SignupForm from '../../SignupForm/SignupForm';
 import { useLocation, useHistory } from 'react-router-dom';
+import Logo from '../../Logo/Logo';
 
 const Login = () => {
     const { user } = useAuth();
@@ -28,11 +28,8 @@ const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-6">
-                <div className="text-center">
-                    <div className="flex-shrink-0 flex items-center justify-center">
-                        <img className="block h-8 w-auto" src={logo} alt="" />
-                        <h3 className="text-blue-400 font-semibold text-2xl">REACT LIFE</h3>
-                    </div>
+                <div className="mx-auto">
+                    <Logo></Logo>
                 </div>
 
                 <div className="shadow-lg rounded-lg border-2 border-blue-100">
