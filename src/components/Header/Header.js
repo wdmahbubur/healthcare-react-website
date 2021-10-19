@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import logo from '../../logo.svg';
 import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
+import { NavHashLink } from 'react-router-hash-link';
 const Header = () => {
     const { user, signOutUser } = useAuth();
     const dropdownRef = useRef();
@@ -65,7 +65,7 @@ const Header = () => {
 
                                 <NavLink to="/" activeClassName="bg-blue-900 text-white" className="px-3 py-3 rounded-md text-sm font-medium" >Home</NavLink>
 
-                                <NavLink to="#services" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Service</NavLink>
+                                <NavHashLink smooth to="/#services" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">Service</NavHashLink>
 
                                 <NavLink to="/about" activeClassName="bg-blue-900 text-white" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium">About Us</NavLink>
 

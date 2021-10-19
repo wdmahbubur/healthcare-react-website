@@ -10,6 +10,7 @@ import ServiceDetails from './components/Pages/ServiceDetails/ServiceDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import About from './components/Pages/About/About';
 import Contact from './components/Pages/Contact/Contact';
+import NotFound from './components/Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route exact path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <footer>

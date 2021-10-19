@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Button from '../../Button/Button';
 import InputField from '../../InputField/InputField';
-
 const Contact = () => {
     const handleForm = (e) => {
         e.preventDefault();
@@ -20,7 +19,7 @@ const Contact = () => {
                             <img className="block h-12 w-auto" src="https://i.ibb.co/hgwzM3K/logo.png" alt="" />
                             <h3 className="text-blue-400 font-semibold text-6xl ml-2">MEDI LIFE</h3>
                         </div>
-                        <p className="w-2/3 text-gray-600"> Medi Life hospital is providing 24×7 emergency services. Critical care ambulance is always available for shifting patients to hospitals in NCR region in case of an emergency.</p>
+                        <p className="md:w-2/3 text-gray-600"> Medi Life hospital is providing 24×7 emergency services. Critical care ambulance is always available for shifting patients to hospitals in NCR region in case of an emergency.</p>
                         <div className="text-gray-600 space-y-2">
                             <p><FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" /> Address: Dhaka, Bangladesh</p>
                             <p><FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />Phone: +880 12345-6789</p>
