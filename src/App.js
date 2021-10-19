@@ -8,6 +8,7 @@ import AuthProvider from './context/authProvider';
 import ServiceDetails from './components/Pages/ServiceDetails/ServiceDetails';
 
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import About from './components/Pages/About/About';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <PrivateRoute path="/service/:sid">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
+            <Route path="/about">
+              <About></About>
+            </Route>
           </Switch>
           <footer>
             <Footer></Footer>
