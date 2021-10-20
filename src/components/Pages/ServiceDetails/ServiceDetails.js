@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import useServices from '../../../hooks/useServices';
 
 const ServiceDetails = () => {
     const { sid } = useParams();
-    const { services } = useServices();
-    const [data, setData] = useState();
-    const [loading, setLoading] = useState(true);
-
+    const { getOneService, data, loading } = useServices();
     useEffect(() => {
-        try {
-            setLoading(true);
-            const getService = services.find(service => service.sid === parseInt(sid));
-            setData(getService);
-            if (getService) {
-                setLoading(false);
-            }
-        }
-        catch (err) {
-            setLoading(false);
-            console.log(err);
-        }
-    }, [services]);
-
-    console.log(data);
+        getOneService(sid);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [getOneService])
 
     return (
         <div className="px-4 md:px-4 lg:px-16 py-8 space-y-6">

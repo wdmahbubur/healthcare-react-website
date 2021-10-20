@@ -80,27 +80,36 @@ const Header = () => {
 
                         {/* Profile dropdown */}
                         <div className="ml-3 relative">
-                            {
-                                user.email ? <div className="flex">
-                                    <button type="button" className="flex gap-2 items-center text-md rounded-full focus:outline-none  focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onClick={profileToggleMenu}>
-                                        <span className="sr-only">Open user menu</span>
-                                        {
-                                            user.photoURL ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
-                                                :
-                                                <img className="h-8 w-8 rounded-full" src="https://i.ibb.co/m9zPyPC/avater.png" alt="" />
+                            <div className="flex">
+                                <NavLink to="/dashboard" activeClassName="bg-blue-900 text-white" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium hidden lg:block">Dashboard</NavLink>
+                                <NavLink to="/appointment" activeClassName="bg-blue-900 text-white" className="hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium mr-2 hidden lg:block">Get Appointment</NavLink>
+                                {
+                                    user.email ?
+                                        <>
+                                            <button type="button" className="flex gap-2 items-center text-md rounded-full focus:outline-none  focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true" onClick={profileToggleMenu}>
+                                                <span className="sr-only">Open user menu</span>
+                                                {
+                                                    user.photoURL ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" />
+                                                        :
+                                                        <img className="h-8 w-8 rounded-full" src="https://i.ibb.co/m9zPyPC/avater.png" alt="" />
 
-                                        }
-                                        <h4 className="hidden lg:block">{user.displayName}</h4>
-                                        <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
-                                    </button>
-                                    <Button type="button" customStyle="bg-blue-900 text-white ml-2 hidden lg:block" onClick={signOutUser}>Logout</Button>
-                                </div>
-                                    :
-                                    <NavLink to="/login" className="bg-blue-900 text-white px-3 py-3 rounded-md text-sm font-medium" >Login</NavLink>
-                            }
+                                                }
+                                                <h4 className="hidden lg:block">{user.displayName}</h4>
+                                                <FontAwesomeIcon icon={faCaretDown}></FontAwesomeIcon>
+                                            </button>
+                                            <Button type="button" customStyle="bg-blue-900 text-white ml-2 hidden lg:block" onClick={signOutUser}>Logout</Button>
+                                        </>
+
+                                        :
+                                        <NavLink to="/login" className="bg-blue-900 text-white px-3 py-3 rounded-md text-sm font-medium" >Login</NavLink>
+                                }
+                            </div>
                             {/* Dropdown menu, show/hide based on menu state. */}
 
                             <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1" ref={dropdownRef} onMouseOut={profileToggleMenu}>
+
+                                <NavLink to="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white lg:hidden" role="menuitem" tabIndex="-1" id="user-menu-item-0" onClick={profileToggleMenu}>Dashboard</NavLink>
+                                <NavLink to="/appointment" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white lg:hidden" role="menuitem" tabIndex="-1" id="user-menu-item-1" onClick={profileToggleMenu}>Get Appointment</NavLink>
 
                                 <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-0" onClick={profileToggleMenu}>Your Profile</NavLink>
                                 <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-700 hover:text-white" role="menuitem" tabIndex="-1" id="user-menu-item-1" onClick={profileToggleMenu}>Settings</NavLink>
@@ -116,13 +125,13 @@ const Header = () => {
             {/* Mobile menu, show/hide based on menu state */}
             <div className="hidden sm:hidden" id="mobile-menu" ref={mobileMenu}>
                 <div className="px-2 pt-2 pb-3 space-y-1">
-                    <NavLink to="#" activeClassName="bg-blue-900 text-white" className="block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</NavLink>
+                    <NavLink to="/" activeClassName="bg-blue-900 text-white" className="block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</NavLink>
 
-                    <NavLink to="#" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</NavLink>
+                    <NavHashLink smooth to="/#services" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Service</NavHashLink>
 
-                    <NavLink to="#" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</NavLink>
+                    <NavLink to="/about" className="hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
 
-                    <NavLink to="#" className=" hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</NavLink>
+                    <NavLink to="/contact" className=" hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</NavLink>
                 </div>
             </div>
         </nav>

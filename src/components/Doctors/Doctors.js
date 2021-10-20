@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useDoctors from '../../hooks/useDoctors';
 import Card from '../Card/Card';
 
 const Doctors = () => {
-    const [doctors, setDoctors] = useState([]);
-    useEffect(() => {
-        fetch('https://mocki.io/v1/6cbc447a-958c-472d-8475-ef4b732845bd')
-            .then(res => res.json())
-            .then(data => setDoctors(data))
-    }, [])
+    const { doctors } = useDoctors();
     return (
         <div className="py-8 px-4 lg:px-28" id="services">
             <div className="text-center mb-8">

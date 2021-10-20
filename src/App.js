@@ -11,6 +11,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import About from './components/Pages/About/About';
 import Contact from './components/Pages/Contact/Contact';
 import NotFound from './components/Pages/NotFound/NotFound';
+import Appointment from './components/Pages/Appoinment/Appoinment';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -38,6 +40,14 @@ function App() {
             <Route path="/contact">
               <Contact></Contact>
             </Route>
+            <PrivateRoute path="/appointment">
+              <Appointment></Appointment>
+            </PrivateRoute>
+
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>

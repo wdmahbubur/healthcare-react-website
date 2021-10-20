@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
@@ -6,7 +7,7 @@ import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 
 const SignupForm = () => {
-    const { createAccount, error } = useAuth();
+    const { createAccount, error, googleSignIn } = useAuth();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ const SignupForm = () => {
 
     const handlePassword = (e) => {
         // check password is valid
-        if (/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$@^%&? "])[a-zA-Z0-9!#$@^%&?]{8,20}$/.test(e.target.value)) {
+        if (/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()+=-\?;,./{}|\":<>\[\]\\\' ~_]).{8,20}$/.test(e.target.value)) {
             setPasswordError("");
             return setPassword(e.target.value);
         }
@@ -73,7 +74,7 @@ const SignupForm = () => {
                 </div>
             </form>
             <hr />
-            <Button type="button" customStyle="bg-yellow-400 w-full"><FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon> Sign Up with Google</Button>
+            <Button type="button" customStyle="bg-yellow-400 w-full" onClick={googleSignIn} ><FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon> Sign Up with Google</Button>
         </div>
     );
 };

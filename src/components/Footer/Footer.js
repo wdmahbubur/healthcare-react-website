@@ -1,12 +1,16 @@
 import { faFacebookF, faInstagram, faLinkedin, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
+import useServices from '../../hooks/useServices';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 import Logo from '../Logo/Logo';
 
 const Footer = () => {
+    const { services } = useServices();
+    let history = useHistory();
     return (
         <div className="p-8 lg:px-16 lg:pt-16 lg:pb-2 bg-gray-100 text-gray-500">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 pb-8">
@@ -38,21 +42,19 @@ const Footer = () => {
                 <div>
                     <h3 className="text-blue-900 font-semibold text-2xl mb-4">Services</h3>
                     <ul className="flex flex-col gap-4">
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
+                        {
+                            services.map(service => <li key={service.sid}><Link to="#" onClick={() => history.push(`/service/${service.sid}`)}>{service.name}</Link></li>)
+                        }
+
                     </ul>
                 </div>
                 <div>
                     <h3 className="text-blue-900 font-semibold text-2xl mb-4">Useful Links</h3>
-                    <ul className="flex flex-col gap-4">
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
-                        <li><NavLink to="#services">Cardiology</NavLink></li>
+                    <ul className="space-y-4">
+                        <li><NavHashLink smooth to="/#services">Service</NavHashLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/contact">Contact</NavLink></li>
+                        <li><NavLink to="/login">Sign in</NavLink></li>
                     </ul>
                 </div>
                 <div>

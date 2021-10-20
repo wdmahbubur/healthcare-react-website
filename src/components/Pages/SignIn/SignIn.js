@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
@@ -12,7 +13,7 @@ const Login = () => {
     const [formToggle, setFormToggle] = useState(true);
     let history = useHistory();
     const location = useLocation();
-    const url = location.state?.from || "/";
+    const url = location.state?.from || "/dashboard";
 
     const signInToggle = () => {
         setFormToggle(true);
