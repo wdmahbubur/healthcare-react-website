@@ -17,7 +17,7 @@ const Dashboard = () => {
                 <h1 className="text-5xl text-center">Hi {user.displayName}!</h1>
             </div>
             <h4 className="text-xl mb-4">Appointment List</h4>
-            <Table className="border-collapse w-screen lg:w-full border-2 border-blue-900 text-sm lg:text-base">
+            <Table className="border-collapse lg:w-full border-2 border-blue-900 text-sm lg:text-base">
                 <Thead className="">
                     <Tr className="bg-blue-700 text-white lg:h-12">
                         <Th className="border-2  border-blue-900">#</Th>
